@@ -2,13 +2,14 @@ import Generator from './Generator.js';
 
 export default function Shortened(options) {
 
-    const data = [];
+    let model = options.model || null;
 
     const generatorService = new Generator();
 
     return {
         // genenerate shortened ids
         create(url) {
+            let data = model.find();
 
             // check if the url exists in our database and returns it
             const doesUrlExistsInDatabase = data.some(i => i.source === url);
@@ -21,18 +22,27 @@ export default function Shortened(options) {
             const id =  generatorService.create(url);
 
             const item = {
+                id: id,
                 source: url,
                 target: `${options.protocol}://${options.domain}:${options.port}/${id}`
             };
 
-            data.push(item);
-
-            return item;
+            return model.create(item);
         },
 
         // retrieve all shortened urls
         find() {
-            return [...data];
+            return [...model.find()];
+        },
+
+        // retrieve only one shortened url
+        get(id) {
+            const items = [...model.find()];
+            const isIdInItems = items.some(i => i.id === id);
+
+            return isIdInItems  
+                ? items.filter(i => i.id === id)[0]
+                : null;
         }
     };
 }
