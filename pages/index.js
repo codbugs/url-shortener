@@ -1,14 +1,11 @@
 import ShortenSection from '../components/ShortenSection.js';
 
-import Shortened from '../services/Shortened.js';
+import ApiManager from '../services/ApiManager.js';
+
 
 export default function Home() {
 
-  let service = new Shortened({
-    domain: 'localhost',
-    protocol: 'http',
-    port: 3000
-  });
+  let service = new ApiManager();
 
-  return <ShortenSection shortenedService={service}/>;
+  return <ShortenSection service={service}/>;
 }
