@@ -1,7 +1,15 @@
+import { useState } from 'react';
+
+import CopyToClipboardLink from './CopyToClipboardLink.js';
+import NotifyClipboardResultsManager from './NotifyClipboardResultsManager.js';
+
 import styles from './ShortenedItemRow.module.css';
 
 
 export default function ShortenedItemRow(props) {
+
+    const [clipboardResult, setClipboardResults] = useState(null);
+    
     return <li className={styles.item}>
         <span className={styles.clicks}>99 <em>clicks</em></span>
         <span className={styles.content}>
@@ -9,7 +17,8 @@ export default function ShortenedItemRow(props) {
             <span className={styles.target}>Short: <a target={'_blank'} href={props.item.target}>{props.item.target}</a></span>
             <div className={styles.actions}>
                 <a target={'_blank'} href={props.item.target}>Open</a>
-                <a >Copy</a>
+                <CopyToClipboardLink value={props.item.target} resolveAs={(value) => setClipboardResults(value)} />
+                <NotifyClipboardResultsManager success={clipboardResult} />
             </div>
         </span>
     </li>;
