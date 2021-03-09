@@ -1,8 +1,10 @@
+import styles from './ShortenButton.module.css';
+
 export default function ShortButton(props) {
 
     const short = () => {
         props.short && props.short();
     };
 
-    return <button type={'button'} onClick={() => short()}>Shorten</button>;
+    return <a className={styles.shorten} href="javascript:void(0);" onClick={() => short()}>Shorten</a>;
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 
 * {
+  box-sizing: border-box;
   font-family: 'Work Sans';
   font-size: 100%;
   font-weight: 400;
@@ -8,10 +9,11 @@
 }
 
 a {
-  color: #27AE60;
+  color: #1ABC9C;
   text-decoration: none;
 }
 
 html {
   background-color: #F8F8F8;
+  color: #2C3E50;
 }

@@ -18,7 +18,7 @@ export default function ShortenForm(props) {
 
     return <div className={styles.form}>
         <div className={styles.field}>
-            <label className={styles.label}>Type the url to short:</label>
+            <label className={styles.label}>Type or paste the url to short:</label>
             <div className={styles.control}>
                 <div className={styles.input}>
                     <ShortenTextbox value={source} change={(e) => changeSource(e)} />

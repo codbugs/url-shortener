@@ -1,0 +1,9 @@
+.shorten {
+    background-color: #1ABC9C;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Work Sans';
+    font-size: 1.25rem;
+    padding: 7px 50px;
+}
