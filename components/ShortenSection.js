@@ -6,6 +6,9 @@ import ShortenedDetail from './ShortenedDetail.js';
 import ShortenedItemsList from './ShortenedItemsList.js';
 import ShortenForm from './ShortenForm.js';
 
+// styles import
+import styles from './ShortenSection.module.css';
+
 
 export default function ShortenSection(props) {
 
@@ -29,7 +32,7 @@ export default function ShortenSection(props) {
         });
     };
 
-    return <div>
+    return <div className={styles.container}>
         <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
         <ShortenedDetail item={item} />
         <ShortenedItemsList items={shortenedCollection} />
