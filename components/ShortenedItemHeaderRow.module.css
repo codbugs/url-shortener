@@ -1,0 +1,16 @@
+.item {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.item > .source {
+    font-size: 1.5rem;
+}
+
+.item > .target {
+    font-size: 1.25rem;
+    padding-right: 25px;
+}

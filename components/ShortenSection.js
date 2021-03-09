@@ -32,9 +32,11 @@ export default function ShortenSection(props) {
         });
     };
 
-    return <div className={styles.container}>
-        <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
-        <ShortenedDetail item={item} />
-        <ShortenedItemsList items={shortenedCollection} />
+    return <div className={styles.parent}>
+        <div className={styles.container}>
+            <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
+            <ShortenedDetail item={item} />
+            <ShortenedItemsList items={shortenedCollection} />
+        </div>
     </div>;
 }

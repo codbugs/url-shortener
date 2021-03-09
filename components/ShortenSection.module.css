@@ -1,4 +1,24 @@
 .container {
-    height: 100vh;
-    margin: auto 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 25px;
 }
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    padding: 0 50px;
+}
+/*
+* {
+    font-size: 100%;
+    line-height: 150%;
+}
+
+.ShortenSection_container__3vbk1 > div > input {
+    width: 80%;
+}
+*/

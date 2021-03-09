@@ -1,0 +1,31 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form > .field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form > .field > .control {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.form > .field > .control > .input {
+    padding-right: 30px;
+    width: 100%;
+}
+
+.form > .field > .control > .input > input {
+    width: 100%;
+}
+
+.form > .field > .label {
+    width: 100%;
+}
+
