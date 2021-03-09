@@ -49,6 +49,15 @@ export default function Shortened(options) {
             return isIdInItems  
                 ? items.filter(i => i.id === id)[0]
                 : null;
+        },
+
+        update(id) {
+            const items = [...model.find()];
+            const isIdInItems = items.some(i => i.id === id);
+
+            return isIdInItems
+                ? model.update(id)
+                : null;
         }
     };
 }

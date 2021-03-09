@@ -17,6 +17,7 @@ export default (req, res) => {
   if(null === item) {
       res.status(404).json({ error: 'not found' });
   } else {
+      service.update(id);
       res.redirect(307, item.source);
   }
 }

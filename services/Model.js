@@ -30,6 +30,14 @@ export const Model = (function() {
 
         find() {
             return [...data];
+        },
+
+        update(id) {
+            const item = data.filter(i => i.id === id)[0];
+            const index = data.indexOf(item);
+            data[index].clicks += 1;
+
+            return data[index];
         }
     };
 })();
