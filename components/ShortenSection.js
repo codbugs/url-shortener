@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import ShortenedDetail from './ShortenedDetail.js';
 import ShortenedItemsList from './ShortenedItemsList.js';
 import ShortenForm from './ShortenForm.js';
+import Title from './Title.js';
 
 // styles import
 import styles from './ShortenSection.module.css';
@@ -34,6 +35,7 @@ export default function ShortenSection(props) {
 
     return <div className={styles.parent}>
         <div className={styles.container}>
+            <Title />
             <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
             <ShortenedDetail item={item} />
             <ShortenedItemsList items={shortenedCollection} />
