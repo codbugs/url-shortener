@@ -1,0 +1,53 @@
+.container {
+    background-color: white;
+    border: solid 3px #1ABC9C;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 25px;
+    padding: 25px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.item > span {
+    padding: 0 10px;
+}
+
+
+.item .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.item .actions {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.item .actions a {
+    margin-right: 20px;
+}
+
+.item .content .source {
+    color: #BDC3C7;
+    font-size: 1.125rem;
+}
+
+.item .content .target {
+    color: #1ABC9C;
+    font-size: 1.5rem;
+}
+
+.item .content .target a {
+    color: #1ABC9C;
+}

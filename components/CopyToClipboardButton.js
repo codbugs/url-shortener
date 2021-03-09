@@ -9,5 +9,5 @@ export default function CopyToClipboardButton(props) {
             .catch(err => sendResults(false));
     };
 
-    return <button type={'button'} onClick={() => handleClick()}>Copy</button>;
+    return <a className={'button'} href="javascript:void(0);" onClick={() => handleClick()}>Copy</a>;
 }

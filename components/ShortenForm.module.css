@@ -28,7 +28,7 @@
 
 .form > .field > .control > .input > input {
     border: solid 2px #2C3E50;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #2C3E50;
     font-family: inherit;
     font-size: 1.25rem;

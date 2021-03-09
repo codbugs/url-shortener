@@ -5,6 +5,7 @@
   font-family: 'Work Sans';
   font-size: 100%;
   font-weight: 400;
+  letter-spacing: 2pt;
   line-height: 150%;
 }
 
@@ -16,4 +17,30 @@ a {
 html {
   background-color: #F8F8F8;
   color: #2C3E50;
+}
+
+.button {
+  background-color: #1ABC9C;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Work Sans';
+  font-size: 1.25rem;
+  font-weight: bolder;
+  letter-spacing: 3pt;
+  padding: 7px 50px;
+  text-transform: uppercase;
+}
+
+.message {
+  font-size: 1.25rem;
+}
+
+.message.error {
+  color: #E74C3C;
+  font-weight: bolder;
+}
+
+.message.success {
+  color: #1ABC9C;
 }
