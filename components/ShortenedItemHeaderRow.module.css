@@ -11,6 +11,7 @@
 }
 
 .item > .target {
+    display: none;
     font-size: 1.25rem;
     padding-right: 25px;
 }
