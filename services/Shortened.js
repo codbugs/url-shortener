@@ -24,7 +24,8 @@ export default function Shortened(options) {
             const item = {
                 id: id,
                 source: url,
-                target: `${options.protocol}://${options.domain}:${options.port}/${id}`
+                target: `${options.protocol}://${options.domain}:${options.port}/${id}`,
+                clicks: 0
             };
 
             return model.create(item);
@@ -32,7 +33,12 @@ export default function Shortened(options) {
 
         // retrieve all shortened urls
         find() {
-            return [...model.find()];
+            const urls = [...model.find()];
+            urls.sort((a, b) => {
+                return a.clicks > b.clicks ? -1 : 1;
+            });
+
+            return urls;
         },
 
         // retrieve only one shortened url

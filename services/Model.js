@@ -1,15 +1,15 @@
 export const Model = (function() {
 
-    console.log('>>> MODEL init');
-
     let data = [{
         id: 'abc',
         source: 'https://www.google.com',
-        target: 'http://localhost:3000/abc'
+        target: 'http://localhost:3000/abc',
+        clicks: 123
     }, {
         id: '123',
         source: 'https://www.duckduckgo.com',
-        target: 'http://localhost:3000/123'
+        target: 'http://localhost:3000/123',
+        clicks: 156
     },];
 
     /* ********
@@ -17,7 +17,8 @@ export const Model = (function() {
         { 
             id: '', // will be a long string
             source: '', // will be a url string
-            target: '' // will be a url string 
+            target: '', // will be a url string
+            clicks: 0 // will be a number with the click times
         }
     *****/
 
