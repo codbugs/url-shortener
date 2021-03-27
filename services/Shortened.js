@@ -1,5 +1,7 @@
 export default function Shortened(options) {
 
+    const MAX_ITEMS = 1000;
+
     let model = options.model || null;
 
     return {
@@ -12,6 +14,10 @@ export default function Shortened(options) {
 
             if(doesUrlExistsInDatabase) {
                 return data.filter(i => i.source === url)[0];
+            }
+
+            if(MAX_ITEMS <= data.length) {
+                return Promise.reject({ err: 'Row limit reached' });
             }
 
             const item = {

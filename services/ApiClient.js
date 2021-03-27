@@ -29,7 +29,10 @@ export default function ApiClient({protocol, domain, port}) {
                 },
             })
                 .then(response => response.json())
-                .catch(err => {});
+                .catch(err => {
+                    console.log('>>> [ApiClient] err', err);
+                    return Promise.reject(err);
+                });
         },
 
         find() {
@@ -42,7 +45,9 @@ export default function ApiClient({protocol, domain, port}) {
             })
                 .then(response => response.json())
                 .catch(err => {
-                    console.log(err);
+                    // TODO: check values to return when error
+                    console.log('>>> [ApiClient] find ERROR', err);
+                    return [];
                 });
         }
     };
