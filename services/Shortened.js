@@ -1,15 +1,11 @@
-import Generator from './Generator.js';
-
 export default function Shortened(options) {
 
     let model = options.model || null;
 
-    const generatorService = new Generator();
-
     return {
         // genenerate shortened ids
-        create(url) {
-            let data = model.find();
+        async create(url) {
+            let data = await model.find();
 
             // check if the url exists in our database and returns it
             const doesUrlExistsInDatabase = data.some(i => i.source === url);
@@ -18,46 +14,54 @@ export default function Shortened(options) {
                 return data.filter(i => i.source === url)[0];
             }
 
-            // in the other hand, lets create a new item
-            const id =  generatorService.create(url);
-
             const item = {
-                id: id,
                 source: url,
-                target: `${options.protocol}://${options.domain}:${options.port}/${id}`,
                 clicks: 0
             };
 
-            return model.create(item);
+            const created = await model.create(item);
+            return created[0];
         },
 
         // retrieve all shortened urls
         find() {
-            const urls = [...model.find()];
-            urls.sort((a, b) => {
-                return a.clicks > b.clicks ? -1 : 1;
-            });
+            return model.find().then(urls => {
+                urls.sort((a, b) => {
+                    return a.clicks > b.clicks ? -1 : 1;
+                });
 
-            return urls;
+                return urls;
+            });
         },
 
         // retrieve only one shortened url
         get(id) {
-            const items = [...model.find()];
-            const isIdInItems = items.some(i => i.id === id);
+            return model.find().then(items => {
+                const isIdInItems = items.some(i => i.target === parseInt(id));
 
-            return isIdInItems  
-                ? items.filter(i => i.id === id)[0]
-                : null;
+                return isIdInItems  
+                    ? items.filter(i => i.target === parseInt(id))[0]
+                    : null;
+            });
         },
 
         update(id) {
-            const items = [...model.find()];
-            const isIdInItems = items.some(i => i.id === id);
+           return model.find()
+                .then(items => {
+                    const isIdInItems = items.some(i => i.target === parseInt(id));
 
-            return isIdInItems
-                ? model.update(id)
-                : null;
+                    if(isIdInItems) {
+                        const item = items.filter(i => i.target === parseInt(id))[0];
+                        return item;
+                    } else {
+                        return null;
+                    }
+                })
+                .then(item => {
+                    return null != item
+                        ? model.update(item)
+                        : null;
+                });
         }
     };
 }

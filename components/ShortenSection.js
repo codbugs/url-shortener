@@ -18,9 +18,7 @@ export default function ShortenSection(props) {
     let [shortenedCollection, setShortenedCollection] = useState(props.items);
 
     useEffect(() => {
-        console.log('>>> [ShortenSection] useEffect init');
         apiService.find().then(items => {
-            console.log('>>> [ShortenSection] useEffect items: ', items);
             if(null !== items && undefined !== items) {
                 setShortenedCollection(items);
             }
