@@ -11,5 +11,5 @@ export default function CopyToClipboardLink(props) {
             .catch(err => sendResults(false));
     };
 
-    return <a href="javascript:void(0);" onClick={() => handleClick()}>Copy</a>;
+    return <a href="#" onClick={() => handleClick()}>Copy</a>;
 }

@@ -4,5 +4,5 @@ export default function ShortButton(props) {
         props.short && props.short();
     };
 
-    return <a className={'button'} href="javascript:void(0);" onClick={() => short()}>Shorten</a>;
+    return <a className={'button'} href="#" onClick={() => short()}>Shorten</a>;
 }
