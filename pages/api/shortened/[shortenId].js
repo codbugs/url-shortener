@@ -1,8 +1,13 @@
+// services
 import ShortenedLinksRepository from '../../../repositories/ShortenedLinks.js';
 import Shortened from '../../../services/Shortened.js';
 
 
-export default async (req, res) => {
+// api middleware functions
+import trustedDomainBlocker from '../../../middleware/trustedDomainBlocker.js';
+
+
+export default function handler(req, res) {
  
   let service = new Shortened({
       domain: 'localhost',
@@ -20,5 +25,9 @@ export default async (req, res) => {
   } else {
       res.status(200).json(item);
   }
+};
+
+
+export default async function(req, res) {
+    await trustedDomainBlocker(handler)(req, res);
 }
-  
