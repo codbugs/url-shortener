@@ -30,14 +30,20 @@ export default function Shortened(options) {
         },
 
         // retrieve all shortened urls
-        find() {
-            return model.find().then(urls => {
-                urls.sort((a, b) => {
-                    return a.clicks > b.clicks ? -1 : 1;
-                });
+        find({ limit }) {
+            return model.find()
+                .then(urls => {
+                    urls.sort((a, b) => {
+                        return a.clicks > b.clicks ? -1 : 1;
+                    });
 
-                return urls;
-            });
+                    return urls;
+                })
+                .then(collection => {
+                    return limit !== 0 
+                        ? collection.slice(0, limit)
+                        : collection;
+                });
         },
 
         // retrieve only one shortened url

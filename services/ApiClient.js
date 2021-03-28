@@ -35,9 +35,11 @@ export default function ApiClient({protocol, domain, port}) {
                 });
         },
 
-        find() {
+        find(params) {
 
-            return fetch(`${protocol}://${domain}:${port}/api/shortened`, {
+            const limit = (params && params.limit) || 0;
+
+            return fetch(`${protocol}://${domain}:${port}/api/shortened?limit=${limit}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

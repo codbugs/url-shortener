@@ -14,7 +14,7 @@ export async function getServerSideProps() {
 
   let service = ApiClientBuilder.build();
 
-  return service.find().then(collection => {
+  return service.find({limit: 5}).then(collection => {
     return {
       props: {
         items: collection
