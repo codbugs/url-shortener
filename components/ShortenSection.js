@@ -1,17 +1,14 @@
 // frameworks imports
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 // components imports
+import MasterLayout from './core/MasterLayout.js';
 import ShortenedDetail from './ShortenedDetail.js';
 import ShortenedDetailError from './ShortenedDetailError.js';
 import ShortenedItemsList from './ShortenedItemsList.js';
 import ShortenForm from './ShortenForm.js';
 import Title from './Title.js';
-
-
-// styles import
-import styles from './ShortenSection.module.css';
 
 
 export default function ShortenSection(props) {
@@ -37,13 +34,11 @@ export default function ShortenSection(props) {
         });
     };
 
-    return <div className={styles.parent}>
-        <div className={styles.container}>
-            <Title />
-            <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
-            <ShortenedDetail item={item} />
-            <ShortenedDetailError message={itemMessage} />
-            <ShortenedItemsList items={shortenedCollection} />
-        </div>
-    </div>;
+    return <MasterLayout>
+        <Title />
+        <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
+        <ShortenedDetail item={item} />
+        <ShortenedDetailError message={itemMessage} />
+        <ShortenedItemsList items={shortenedCollection} />
+    </MasterLayout>;
 }
