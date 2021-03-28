@@ -34,6 +34,7 @@
 }
 
 .item .actions a {
+    cursor: pointer;
     margin-right: 20px;
 }
 
