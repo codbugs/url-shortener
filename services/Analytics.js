@@ -1,13 +1,18 @@
-export const Analytics = (function() {
+export default function Analytics(options) {
 
-    let data = [];
+    let model = options.model || null;
 
     return {
-        create(item) {
-            data.push(item);
-
-            console.log('>>> ANALYTICS');
-            console.log(data);
+        // genenerate shortened ids
+        async create({req, resourceId, item}) {
+            const created = await model.create({
+                resourceId: resourceId, 
+                headers: JSON.stringify(req.headers), 
+                sourceUrl: item.source,
+                ip: req.connection.remoteAddress,
+                created: (new Date()).valueOf(),
+            });
+            return created[0] !== null;
         }
     };
-})();
+}

@@ -1,5 +1,5 @@
-import { Analytics } from '../../../services/Analytics.js';
-import { AnalyticsModelBuilder } from '../../../services/AnalyticsModelBuilder.js';
+import Analytics from '../../../services/Analytics.js';
+import AnalyticsRepostory from '../../../repositories/Analytics.js';
 import ShortenedLinksRepository from '../../../repositories/ShortenedLinks.js';
 import Shortened from '../../../services/Shortened.js';
 
@@ -14,15 +14,22 @@ export default async (req, res) => {
     port: 3000
   });
 
+  let analyticsService = new Analytics({
+    model: new AnalyticsRepostory()
+  });
+
   const id = req.query.shortenId;
   const item = await service.get(id);
   
-  // const analyticsItem = AnalyticsModelBuilder.create({
-  //   headers: req.headers,
-  //   short: id,
-  //   target: null === item ? '' : item.source
-  // });
-  // Analytics.create(analyticsItem);
+  try {
+    analyticsService.create({
+      req,
+      resourceId: id,
+      item
+    });
+  } catch(err) {
+    console.log('>>> ERROR when adding analytics item', err);
+  }
 
   if(null === item) {
       res.status(404).json({ error: 'not found' });
