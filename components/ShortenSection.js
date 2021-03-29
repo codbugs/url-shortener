@@ -39,6 +39,6 @@ export default function ShortenSection(props) {
         <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
         <ShortenedDetail item={item} />
         <ShortenedDetailError message={itemMessage} />
-        <ShortenedItemsList items={shortenedCollection} />
+        <ShortenedItemsList popular={true} items={shortenedCollection} />
     </MasterLayout>;
 }

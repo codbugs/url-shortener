@@ -1,0 +1,11 @@
+.item {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.item > .source {
+    font-size: 1.5rem;
+}
