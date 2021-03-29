@@ -36,8 +36,6 @@ async function handler(req, res) {
     // GET -> get all items
     if('GET' === method) {
         const limit = safeParseInt(req.query.limit);
-        console.log('>>> API query', req.query.limit);
-        console.log('>>> API limit', limit);
 
         // NOTE: You must use async/await notation to avoid warning message about stalled requests
         const items = await service.find({ limit });
