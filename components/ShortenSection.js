@@ -3,12 +3,11 @@ import { useState } from 'react';
 
 
 // components imports
-import MasterLayout from './core/MasterLayout.js';
+import { Fragment } from 'react';
 import ShortenedDetail from './ShortenedDetail.js';
 import ShortenedDetailError from './ShortenedDetailError.js';
 import ShortenedItemsList from './ShortenedItemsList.js';
 import ShortenForm from './ShortenForm.js';
-import Title from './Title.js';
 
 
 export default function ShortenSection(props) {
@@ -34,11 +33,10 @@ export default function ShortenSection(props) {
         });
     };
 
-    return <MasterLayout>
-        <Title />
+    return <Fragment>
         <ShortenForm shorten={(url) => generateShortenUrl(url)}/>
         <ShortenedDetail item={item} />
         <ShortenedDetailError message={itemMessage} />
         <ShortenedItemsList popular={true} items={shortenedCollection} />
-    </MasterLayout>;
+    </Fragment>;
 }
