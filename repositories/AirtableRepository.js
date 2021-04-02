@@ -8,8 +8,17 @@ export default function AirtableRepository({ table }) {
     Logger.info('AirtableRepository', 'AirtableRepository', table);
 
     
-    Logger.info('AirtableRepository', 'AirtableRepository', 'process.env');
-    Logger.info('AirtableRepository', 'AirtableRepository', process.env);
+    Logger.info('AirtableRepository', 'AirtableRepository', 'process.env.AIRTABLE_API_KEY');
+    Logger.info('AirtableRepository', 'AirtableRepository', process.env.AIRTABLE_API_KEY);
+
+    Logger.info('AirtableRepository', 'AirtableRepository', 'process.env.AIRTABLE_API_BASE_URL');
+    Logger.info('AirtableRepository', 'AirtableRepository', process.env.AIRTABLE_API_BASE_URL);
+
+    Logger.info('AirtableRepository', 'AirtableRepository', 'process.env.AIRTABLE_API_VERSION');
+    Logger.info('AirtableRepository', 'AirtableRepository', process.env.AIRTABLE_API_VERSION);
+
+    Logger.info('AirtableRepository', 'AirtableRepository', 'process.env.AIRTABLE_BASE_ID');
+    Logger.info('AirtableRepository', 'AirtableRepository', process.env.AIRTABLE_BASE_ID);
 
 
     const authId = process.env.AIRTABLE_API_KEY;

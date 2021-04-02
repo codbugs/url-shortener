@@ -5,7 +5,9 @@ import Logger from './Logger.js';
 function Builder() {
 
     Logger.info('ApiClientBuilder', 'Builder', 'init');
-    Logger.info('ApiClientBuilder', 'Builder', process.env);
+    Logger.info('ApiClientBuilder', 'Builder', process.env.NEXT_PUBLIC_PROTOCOL);
+    Logger.info('ApiClientBuilder', 'Builder', process.env.NEXT_PUBLIC_DOMAIN);
+    Logger.info('ApiClientBuilder', 'Builder', process.env.NEXT_PUBLIC_PORT);
 
     const params = {
         protocol: process.env.NEXT_PUBLIC_PROTOCOL,
