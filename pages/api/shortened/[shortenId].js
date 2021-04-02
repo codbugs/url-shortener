@@ -7,7 +7,7 @@ import Shortened from '../../../services/Shortened.js';
 import trustedDomainBlocker from '../../../middleware/trustedDomainBlocker.js';
 
 
-export default function handler(req, res) {
+async function handler(req, res) {
  
   let service = new Shortened({
       domain: 'localhost',
