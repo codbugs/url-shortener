@@ -10,7 +10,7 @@ import { ApiClientBuilder } from '../services/ApiClientBuilder.js';
 export default function Links({ items }) {
   return <Fragment>
     <Head>
-      <title>My Personal Url Shortener</title>
+      <title>My Personal Url Shortener - All links</title>
     </Head>
     <MasterLayout>
       <Title />
