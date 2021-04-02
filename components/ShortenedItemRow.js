@@ -21,7 +21,7 @@ export default function ShortenedItemRow(props) {
         <span className={styles.clicks}>{props.item.clicks} <em>clicks</em></span>
         <span className={styles.content}>
             <span className={styles.source}>{props.item.source}</span>
-            <span className={styles.target}>Short: <a target={'_blank'} href={shortenUrl}>{shortenUrl}</a></span>
+            <span className={styles.target}><a target={'_blank'} href={shortenUrl}>{shortenUrl}</a></span>
             <div className={styles.actions}>
                 <a target={'_blank'} href={shortenUrl}>Open</a>
                 <CopyToClipboardLink value={shortenUrl} resolveAs={(value) => setClipboardResults(value)} />

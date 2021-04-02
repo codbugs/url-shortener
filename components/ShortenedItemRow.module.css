@@ -1,52 +1,118 @@
-.item {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 25px;
+@media (max-width: 767px) {
+    .item {
+        border-left: solid 3px #1ABC9C;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+
+    .item > span {
+        padding: 0 10px;
+    }
+
+    .item .clicks {
+        display: none;
+        color: #1ABC9C;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 125%;
+    }
+
+    .item .clicks em {
+        font-size: 1.125rem;
+    }
+
+    .item .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .item .actions {
+        display: flex;
+        flex-direction: row;
+        font-size: 0.875rem;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .item .actions a {
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .item .content .source {
+        font-size: 1rem;
+        overflow-wrap: break-word;
+    }
+
+    .item .content .target {
+        color: #BDC3C7;
+        font-size: 1rem;
+        overflow-wrap: break-word;
+    }
+
+    .item .content .target a {
+        color: #BDC3C7;
+    }
 }
 
-.item > span {
-    padding: 0 10px;
-}
 
-.item .clicks {
-    color: #1ABC9C;
-    font-size: 1.5rem;
-    text-align: center;
-    line-height: 125%;
-}
+@media (min-width: 768px) {
+    .item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 25px;
+    }
 
-.item .clicks em {
-    font-size: 1.125rem;
-}
+    .item > span {
+        padding: 0 10px;
+    }
 
-.item .content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+    .item .clicks {
+        color: #1ABC9C;
+        flex: 0 0 50px;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 125%;
+    }
 
-.item .actions {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 10px;
-}
+    .item .clicks em {
+        font-size: 1.125rem;
+    }
 
-.item .actions a {
-    cursor: pointer;
-    margin-right: 20px;
-}
+    .item .content {
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
+    }
 
-.item .content .source {
-    font-size: 1.5rem;
-}
+    .item .actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
 
-.item .content .target {
-    color: #BDC3C7;
-    font-size: 1.125rem;
-}
+    .item .actions a {
+        cursor: pointer;
+        margin-right: 20px;
+    }
 
-.item .content .target a {
-    color: #BDC3C7;
+    .item .content .source {
+        font-size: 1.5rem;
+        overflow-wrap: break-word;
+    }
+
+    .item .content .target {
+        color: #BDC3C7;
+        font-size: 1.125rem;
+        overflow-wrap: break-word;
+    }
+
+    .item .content .target a {
+        color: #BDC3C7;
+    }
 }

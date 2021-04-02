@@ -1,51 +1,106 @@
-.form {  
-    background-color: white;
-    border: solid 3px #ECF0F1;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 25px;
+@media (max-width: 767px) {
+    .form {  
+        background-color: white;
+        border: solid 3px #ECF0F1;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 25px;
+    }
+
+    .form > .field {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form > .field > .control {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .form > .field > .control > .input {
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    .form > .field > .control > .input > input {
+        border: solid 2px #2C3E50;
+        border-radius: 10px;
+        color: #2C3E50;
+        font-family: inherit;
+        font-size: 0.875rem;
+        outline: none;
+        padding: 5px 10px;
+        width: 100%;
+    }
+
+    .form > .field > .control > .input > input:focus {
+        background-color: white;
+        border: solid 2px #1ABC9C;
+        color: #1ABC9C;
+    }
+
+    .form > .field > .label {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        width: 100%;
+    }
 }
 
-.form > .field {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+@media (min-width: 768px) {
+    .form {  
+        background-color: white;
+        border: solid 3px #ECF0F1;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 25px;
+    }
 
-.form > .field > .control {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-}
+    .form > .field {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-.form > .field > .control > .input {
-    padding-right: 40px;
-    width: 100%;
-}
+    .form > .field > .control {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
 
-.form > .field > .control > .input > input {
-    border: solid 2px #2C3E50;
-    border-radius: 10px;
-    color: #2C3E50;
-    font-family: inherit;
-    font-size: 1.25rem;
-    outline: none;
-    padding: 5px 10px;
-    width: 100%;
-}
+    .form > .field > .control > .input {
+        padding-right: 40px;
+        width: 100%;
+    }
 
-.form > .field > .control > .input > input:focus {
-    background-color: white;
-    border: solid 2px #1ABC9C;
-    color: #1ABC9C;
-}
+    .form > .field > .control > .input > input {
+        border: solid 2px #2C3E50;
+        border-radius: 10px;
+        color: #2C3E50;
+        font-family: inherit;
+        font-size: 1.25rem;
+        outline: none;
+        padding: 5px 10px;
+        width: 100%;
+    }
 
-.form > .field > .label {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    width: 100%;
+    .form > .field > .control > .input > input:focus {
+        background-color: white;
+        border: solid 2px #1ABC9C;
+        color: #1ABC9C;
+    }
+
+    .form > .field > .label {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        width: 100%;
+    }
 }
 
