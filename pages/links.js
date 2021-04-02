@@ -11,6 +11,7 @@ export default function Links({ items }) {
   return <Fragment>
     <Head>
       <title>My Personal Url Shortener - All links</title>
+      <meta name="description" content="A personal shorten url application that allows to manage your own links and spread them across social media networks and evaluate the impact of the use of each of them." />
     </Head>
     <MasterLayout>
       <Title />
