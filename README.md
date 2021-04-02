@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Personal Url Shortener
 
-## Getting Started
+A personal Url Shortener inspired by [Bit.ly] and [Twitter], [Facebook] and some other web applications and companies that provide this kind of service to the users to ease the use of long URLs.
 
-First, run the development server:
+## The real objective
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This web application aims to show how easy is to shorten a URL provided by users and analyze the data provided each time any person clicks on the shortened URL. For example, you can analyze which URL is the most clicked by day, by hour, or by minute, you can get information about the browsers used when clicking the URLs, the IP addresses of each click, and the referrer of the application that hosts the shortened URL.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technical information
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The Personal Url Shortener has been coded using [Next.js] framework that implies the use of JavaScript, [React], and [Node.js].
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+It has been developed in several [Twitch] sessions on my channel. Take a look and send me greetings if I'm in live session. Send me any comment and follow me if you like it and, if you think the content is amazing, send me a subscription.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+I also have a [Youtube] channel where you can find all [Twitch] videos about the Personal Url Shortener and some other stuff. Send me any comment or subscribe if you like it.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Going further
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you think you can contribute to improving the application by adding authentication, for instance, fork it, and let's make it bigger and better.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Bit.ly]: https://bitly.com/
+[Twitter]: https://twitter.com
+[Facebook]: https://facebook.com
+[Next.js]: https://nextjs.org/
+[React]: https://reactjs.org/
+[Node.js]: https://nodejs.org/
+[Twitch]: https://www.twitch.tv/coding_bugs
+[Youtube]: https://www.youtube.com/channel/UCbDKRPg07mN-AuuoslL4agw
