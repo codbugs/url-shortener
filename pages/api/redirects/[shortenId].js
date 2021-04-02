@@ -8,10 +8,7 @@ export default async (req, res) => {
   
   // TODO: change input parameters to be set in a builder service
   let service = new Shortened({
-    domain: 'localhost',
-    model: new ShortenedLinksRepository(),
-    protocol: 'http',
-    port: 3000
+    model: new ShortenedLinksRepository()
   });
 
   let analyticsService = new Analytics({

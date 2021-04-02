@@ -7,11 +7,11 @@ const Logger = (function() {
 
     return {
         error(obj, method, text) {
-            console.error(`[${formatDate(new Date(Date.now()))}][${obj}][${method}] - ${text}`);
+            console.error(`[${formatDate(new Date(Date.now()))}][${obj}][${method}] - `, text);
         },
 
         info(obj, method, text) {
-            console.info(`[${formatDate(new Date(Date.now()))}][${obj}][${method}] - ${text}`);
+            console.info(`[${formatDate(new Date(Date.now()))}][${obj}][${method}] - `, text);
         }
     }
 })();

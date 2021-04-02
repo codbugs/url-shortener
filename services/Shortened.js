@@ -1,4 +1,11 @@
+import Logger from './Logger.js';
+
+
 export default function Shortened(options) {
+    
+    Logger.info('Shortened', 'Shortened', 'init');
+    Logger.info('Shortened', 'Shortened', 'options');
+    Logger.info('Shortened', 'Shortened', options);
 
     const MAX_ITEMS = 1000;
 

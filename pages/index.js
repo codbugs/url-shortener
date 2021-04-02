@@ -5,11 +5,15 @@ import ShortenSection from '../components/ShortenSection.js';
 import Title from '../components/Title.js';
 
 import { ApiClientBuilder } from '../services/ApiClientBuilder.js';
+import Logger from '../services/Logger.js';
 
 
 export default function Home({ items }) {
 
+  Logger.info('Home', 'Home', 'init');
   let service = ApiClientBuilder.build();
+
+  Logger.info('Home', 'Home', 'ApiClientBuilder instantiated');
 
   return <Fragment>
     <Head>
@@ -25,7 +29,10 @@ export default function Home({ items }) {
 
 export async function getServerSideProps() {
 
+  Logger.info('Home', 'getServerSideProps', 'init');
   let service = ApiClientBuilder.build();
+
+  Logger.info('Home', 'getServerSideProps', 'ApiClientBuilder instantiated');
 
   return service.find({limit: 5}).then(collection => {
     return {

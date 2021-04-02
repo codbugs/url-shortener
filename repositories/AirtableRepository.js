@@ -1,4 +1,16 @@
+import Logger from '../services/Logger.js';
+
+
 export default function AirtableRepository({ table }) {
+
+    Logger.info('AirtableRepository', 'AirtableRepository', 'init');
+    Logger.info('AirtableRepository', 'AirtableRepository', 'table');
+    Logger.info('AirtableRepository', 'AirtableRepository', table);
+
+    
+    Logger.info('AirtableRepository', 'AirtableRepository', 'process.env');
+    Logger.info('AirtableRepository', 'AirtableRepository', process.env);
+
 
     const authId = process.env.AIRTABLE_API_KEY;
     const baseUrl = process.env.AIRTABLE_API_BASE_URL;

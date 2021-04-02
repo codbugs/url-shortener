@@ -25,10 +25,7 @@ function safeParseInt(value) {
 async function handler(req, res) {
     
     let service = new Shortened({
-        domain: 'localhost',
-        model: new ShortenedLinksRepository(),
-        protocol: 'http',
-        port: 3000
+        model: new ShortenedLinksRepository()
     });
 
     const method = req.method;
